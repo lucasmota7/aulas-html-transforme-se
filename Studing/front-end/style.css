@@ -1,0 +1,54 @@
+/* Zerando o padrão dos navegadores */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #f4f4f9;
+}
+
+/* O Grid Layout em ação: Dividindo a tela em 2 colunas */
+.dashboard {
+  display: grid;
+  /* Coluna 1: 250px fixos. Coluna 2: 1fr (ocupa 100% do resto do espaço livre) */
+  grid-template-columns: 250px 1fr; 
+  min-height: 100vh; /* Ocupa 100% da altura da tela */
+}
+
+.dashboard__sidebar {
+  background-color: #2c3e50;
+  color: white;
+  padding: 2rem;
+}
+
+.dashboard__content {
+  padding: 2rem;
+  /* Usando Flexbox internamente para alinhar o conteúdo principal */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinha os itens à esquerda */
+  gap: 20px; /* Cria um espaço de 20px entre os elementos filhos, limpo e sem usar margin */
+}
+
+/* Estilização baseada em BEM */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* O Modificador (--primary) */
+.btn--primary {
+  background-color: #3498db;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.btn--primary:hover {
+  background-color: #2980b9;
+}
